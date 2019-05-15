@@ -1,4 +1,4 @@
-from .parse_log_start_time import parse_log_start_time
+from .parse_log_time import parse_log_start_time
 
 
 def get_frag_lines(log_data):
