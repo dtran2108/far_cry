@@ -2,7 +2,7 @@
 from parsers.parse_frags import parse_frags
 from base_modules import read_log_file
 from parsers.parse_mode_and_map import parse_session_mode_and_map
-from parsers.parse_log_start_time import parse_log_start_time
+from parsers.parse_log_time import parse_log_start_time
 from parsers.prettify_frags import load_json_file, prettify_frags
 
 
