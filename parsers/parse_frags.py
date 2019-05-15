@@ -31,7 +31,13 @@ def get_frag(frag_line, log_start_time):
     """
     elements = frag_line.split()
     frag_time = elements[0][1:-1].split(':')
-    full_frag_time = log_start_time.replace(minute=int(frag_time[0]), second=int(frag_time[1]))
+    start_hour = log_start_time.hour
+    frag_minute = int(frag_time[0])
+    frag_second = int(frag_time[1])
+    if frag_minute == 0:
+        full_frag_time = log_start_time.replace(hour=start_hour+1,
+                            minute=frag_minute, second=frag_second)
+    full_frag_time = log_start_time.replace(minute=frag_minute, second=frag_second)
     if len(elements) == 5:
         return (full_frag_time, elements[2])
     else:
