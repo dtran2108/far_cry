@@ -1,3 +1,6 @@
+import csv
+
+
 def read_log_file(log_file_path):
     """
     return log data read from log file
@@ -29,3 +32,14 @@ def get_cvar(log_data):
         temp = cvar.split(',')
         cvar_dict[temp[0]] = temp[1]
     return cvar_dict
+
+
+def write_frag_csv_file(log_file_pathname, frags):
+    """
+    @param
+    log_file_pathname: the pathname of the CSV file to store the frags in
+    frags: an array of tuples of the frags
+    """
+    with open(log_file_pathname, 'w') as csvFile:
+        writer = csv.writer(csvFile)
+        writer.writerows(frags)
