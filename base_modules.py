@@ -40,6 +40,6 @@ def write_frag_csv_file(log_file_pathname, frags):
     log_file_pathname: the pathname of the CSV file to store the frags in
     frags: an array of tuples of the frags
     """
-    with open(log_file_pathname, 'w') as csvFile:
+    with open(log_file_pathname, 'w', newline='') as csvFile:
         writer = csv.writer(csvFile)
         writer.writerows(frags)
