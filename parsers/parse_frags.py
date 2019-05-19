@@ -39,7 +39,7 @@ def get_frag(frag_line, log_start_time):
                             minute=frag_minute, second=frag_second)
     full_frag_time = log_start_time.replace(minute=frag_minute, second=frag_second)
     if 'itself' in elements:
-        return (full_frag_time, elements[elements.index('<Lua>')+1:elements.index('killed')])
+        return (full_frag_time, elements[elements.index('<Lua>')+1:elements.index('killed')][0])
     else:
         return (full_frag_time, ' '.join(elements[elements.index('<Lua>')+1:elements.index('killed')]),
                 ' '.join(elements[elements.index('killed')+1:elements.index('with')]), elements[-1])

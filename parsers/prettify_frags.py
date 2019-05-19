@@ -11,7 +11,7 @@ def load_json_file(json_file):
     """
     with open(json_file, 'rb') as f:
         json_str = f.read()
-    data_store = json.loads(json_str)
+    data_store = json.loads(json_str.decode())
     return data_store
 
 
