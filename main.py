@@ -13,7 +13,8 @@ def main():
     start_time = parse_log_start_time(log_data)
     game_start_time, game_end_time = parse_game_session_start_and_end_time(log_data, map_game, start_time)
     frags = parse_frags(log_data)
-    insert_match_to_sqlite('./farcry.db', game_start_time, game_end_time, mode_game, map_game, frags)
+    # insert_match_to_sqlite('./farcry.db', game_start_time, game_end_time, mode_game, map_game, frags)
+    write_frag_csv_file('./csv_files/log00.csv', frags)
 
 
 if __name__ == '__main__':

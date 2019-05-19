@@ -26,7 +26,7 @@ def insert_frags_to_sqlite(connection, match_id, frags):
 def insert_match_to_sqlite(file_pathname, start_time, end_time,
                            game_mode, map_name, frags):
     """
-     inserts a new record into the table match
+    insert a new record into the table match
 
     @param
     file_pathname: the path and name of the Far Cry's SQLite database;
