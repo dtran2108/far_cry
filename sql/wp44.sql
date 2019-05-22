@@ -3,7 +3,7 @@ SELECT match_id,
        Sum(kill_count) as kill_count,
        sum(sucide_count) as sucide_count,
        sum(death_count) as death_count,
-       100.0 * sum(kill_count) / (sum(kill_count) + sum(death_count) + sum(sucide_count)) as efficiency
+       round (100.0 * sum(kill_count) / (sum(kill_count) + sum(death_count) + sum(sucide_count)), 2) as efficiency
 FROM 
     (select match_id,
             killer_name as player_name,
